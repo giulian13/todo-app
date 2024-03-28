@@ -1,0 +1,8 @@
+.frameList {
+  height: auto;
+  width: 90%;
+  height: auto;
+  overflow: hidden;
+
+  border-radius: 10px;
+}
