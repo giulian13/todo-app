@@ -11,12 +11,16 @@ import { useEffect, useState } from "react";
 import TodoItemList from "./components/TodoItemList";
 import TodoItem from "./components/TodoItem";
 import InputComponent from "./components/InputComponent";
+import FiltersTodo from "./components/FiltersTodo";
 
 function App() {
   const [backgroundImage, setBackgroundImage] = useState(
     backgroundImgMobileDark
   );
 
+  const [toDoList, setToDoList] = useState([]);
+
+  console.log(toDoList);
   return (
     <div className="App">
       <div className="mainFrame">
@@ -29,8 +33,9 @@ function App() {
           <h1>TODO</h1>
           <img src={iconSun} alt="light/dark mode button"></img>
         </header>
-        <InputComponent />
-        <TodoItemList />
+        <InputComponent toDoList={toDoList} insertToDoItem={setToDoList} />
+        <TodoItemList toDoList={toDoList} setToDoList={setToDoList} />
+        <FiltersTodo />
       </div>
     </div>
   );

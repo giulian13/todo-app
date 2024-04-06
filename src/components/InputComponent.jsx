@@ -1,11 +1,32 @@
+import { useState } from "react";
 import "./InputComponent.css";
-import iconCheck from "../img/icon-check.svg";
 
-export default function InputComponent() {
+export default function InputComponent(props) {
+  const { toDoList, insertToDoItem } = props;
+
+  const [inputText, setInputText] = useState("");
+
+  function handleSubmit(event) {
+    event.preventDefault();
+    insertToDoItem([...toDoList, inputText]);
+    event.target.input = " ";
+  }
+
   return (
     <div className="inputFrame">
-      <img className="checkButton" src={iconCheck} alt="delete button" />
-      <p>Create a new todo...</p>
+      <form onSubmit={handleSubmit}>
+        <div className="checkButton"></div>
+        <input
+          className="inputText"
+          type="text"
+          placeholder="Create a new todo..."
+          onChange={(e) => {
+            e.preventDefault();
+            setInputText(e.target.value);
+          }}
+          name="todo input"
+        />
+      </form>
     </div>
   );
 }

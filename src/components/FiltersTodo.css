@@ -1,0 +1,26 @@
+.filtersFrame {
+  font-size: 18px;
+  color: hsl(233, 14%, 35%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: hsl(235, 24%, 19%);
+
+  width: 90%;
+
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-radius: 5px;
+
+  margin-top: 20px;
+}
+
+.filtersFrame p {
+  padding: 5px 10px;
+}
+
+.filtersFrame p:active {
+  color: hsl(220, 98%, 61%);
+}

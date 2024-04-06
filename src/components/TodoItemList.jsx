@@ -1,15 +1,21 @@
 import "../components/TodoItemList.css";
 import TodoItem from "./TodoItem";
 
-export default function TodoItemList() {
+export default function TodoItemList(props) {
+  const { toDoList, setToDoList } = props;
+
   return (
     <div className="frameList">
-      <TodoItem message="test" />
-      <TodoItem message="Ceva si inca ceva" />
-      <TodoItem />
-      <TodoItem />
-      <TodoItem />
-      <TodoItem />
+      {toDoList.map((x, index) => {
+        return (
+          <TodoItem
+            message={x}
+            keyValue={index}
+            toDoList={toDoList}
+            setToDoList={setToDoList}
+          />
+        );
+      })}
     </div>
   );
 }
