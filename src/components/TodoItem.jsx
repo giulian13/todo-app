@@ -2,6 +2,7 @@ import "../components/TodoItem.css";
 import iconCross from "../img/icon-cross.svg";
 import iconCheck from "../img/icon-check.svg";
 import { useState } from "react";
+import TodoItemList from "./TodoItemList";
 
 export default function TodoItem(props) {
   const { message, keyValue, toDoList, setToDoList } = props;
@@ -25,7 +26,9 @@ export default function TodoItem(props) {
         src={iconCross}
         alt="delete button"
         onClick={() => {
-          setToDoList(toDoList.filter((x) => x !== message));
+          setToDoList(
+            toDoList.filter((keyValue) => keyValue !== toDoList[keyValue])
+          );
         }}
       />
     </div>

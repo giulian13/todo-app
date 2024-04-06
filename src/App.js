@@ -20,7 +20,7 @@ function App() {
 
   const [toDoList, setToDoList] = useState([]);
 
-  console.log(toDoList);
+  // console.log(toDoList);
   return (
     <div className="App">
       <div className="mainFrame">

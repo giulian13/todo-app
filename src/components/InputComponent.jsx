@@ -9,7 +9,7 @@ export default function InputComponent(props) {
   function handleSubmit(event) {
     event.preventDefault();
     insertToDoItem([...toDoList, inputText]);
-    event.target.input = " ";
+    // console.log(event.target.input);
   }
 
   return (
@@ -23,6 +23,9 @@ export default function InputComponent(props) {
           onChange={(e) => {
             e.preventDefault();
             setInputText(e.target.value);
+          }}
+          onSubmit={(e) => {
+            console.log(e.target.value);
           }}
           name="todo input"
         />
