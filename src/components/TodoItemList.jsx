@@ -4,14 +4,20 @@ import TodoItem from "./TodoItem";
 export default function TodoItemList(props) {
   const { toDoList, setToDoList } = props;
 
+  const modifiedToDoList = toDoList.map((toDoItem, index) => ({
+    id: index + 1,
+    insertedText: toDoItem.insertedText,
+  }));
+
   return (
     <div className="frameList">
-      {toDoList.map((x, index) => {
+      {modifiedToDoList.map((toDoItem) => {
         return (
           <TodoItem
-            message={x}
-            keyValue={index}
-            toDoList={toDoList}
+            key={toDoItem.id}
+            message={toDoItem.insertedText}
+            keyValue={toDoItem.id}
+            toDoList={modifiedToDoList}
             setToDoList={setToDoList}
           />
         );

@@ -8,8 +8,7 @@ export default function InputComponent(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    insertToDoItem([...toDoList, inputText]);
-    // console.log(event.target.input);
+    insertToDoItem([...toDoList, { id: 0, insertedText: inputText }]);
   }
 
   return (
