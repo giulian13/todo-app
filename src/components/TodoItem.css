@@ -34,6 +34,14 @@
   align-items: center;
 }
 
+.checkButtonBackground {
+  background-image: linear-gradient(
+    to bottom right,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+}
+
 .deleteButton {
   width: 12px;
   height: 12px;

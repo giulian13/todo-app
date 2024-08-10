@@ -9,6 +9,7 @@ export default function InputComponent(props) {
   function handleSubmit(event) {
     event.preventDefault();
     insertToDoItem([...toDoList, { id: 0, insertedText: inputText }]);
+    setInputText("");
   }
 
   return (
@@ -18,6 +19,7 @@ export default function InputComponent(props) {
         <input
           className="inputText"
           type="text"
+          value={inputText}
           placeholder="Create a new todo..."
           onChange={(e) => {
             e.preventDefault();

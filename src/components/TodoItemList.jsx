@@ -1,8 +1,10 @@
 import "../components/TodoItemList.css";
 import TodoItem from "./TodoItem";
+import Counter from "./Counter";
 
 export default function TodoItemList(props) {
   const { toDoList, setToDoList } = props;
+  const counter = toDoList.length;
 
   const modifiedToDoList = toDoList.map((toDoItem, index) => ({
     id: index + 1,
@@ -22,6 +24,7 @@ export default function TodoItemList(props) {
           />
         );
       })}
+      <Counter numberOfItems={counter} setToDoList={setToDoList} />
     </div>
   );
 }

@@ -21,6 +21,7 @@
   padding: 5px 10px;
 }
 
-.filtersFrame p:active {
+.filtersFrame p:focus,
+p:active {
   color: hsl(220, 98%, 61%);
 }

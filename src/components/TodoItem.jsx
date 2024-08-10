@@ -7,7 +7,10 @@ export default function TodoItem(props) {
   const { message, keyValue, toDoList, setToDoList } = props;
   const [checkState, setCheckState] = useState(false);
 
-  let divStyle = { textDecoration: "line-through" };
+  let divStyle = {
+    textDecoration: "line-through",
+    color: "hsl(233, 14%, 35%)",
+  };
 
   function removeItem(idToRemove) {
     const updatedList = toDoList.filter((item) => item.id !== idToRemove);
@@ -17,7 +20,7 @@ export default function TodoItem(props) {
   return (
     <div className="toDoItem">
       <div
-        className="checkButton"
+        className={` checkButton ${checkState ? "checkButtonBackground" : ""}`}
         onClick={() => {
           checkState ? setCheckState(false) : setCheckState(true);
         }}
