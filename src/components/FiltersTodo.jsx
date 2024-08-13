@@ -1,6 +1,8 @@
 import "./FiltersTodo.css";
 
-export default function FiltersTodo() {
+export default function FiltersTodo(props) {
+  const { setFilteredBy } = props;
+
   return (
     <div className="filtersFrame">
       <p>All</p>

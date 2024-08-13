@@ -10,6 +10,7 @@ export default function ToDoListScreen() {
   const [toDoList, setToDoList] = useState([]);
 
   const [itemNumber, setItemNumber] = useState(0);
+  const [filteredBy, setFilteredBy] = useState("Completed");
 
   const pushNewItem = (inputText) => {
     setToDoList([
@@ -22,8 +23,12 @@ export default function ToDoListScreen() {
   return (
     <div className="listFrame">
       <InputComponent insertToDoItem={pushNewItem} />
-      <TodoItemList toDoList={toDoList} setToDoList={setToDoList} />
-      <FiltersTodo />
+      <TodoItemList
+        toDoList={toDoList}
+        setToDoList={setToDoList}
+        filteredBy={filteredBy}
+      />
+      <FiltersTodo setFilteredBy={setFilteredBy} />
     </div>
   );
 }

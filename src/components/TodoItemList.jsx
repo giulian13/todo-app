@@ -3,14 +3,9 @@ import TodoItem from "./TodoItem";
 import Counter from "./Counter";
 
 export default function TodoItemList(props) {
-  const { toDoList, setToDoList } = props;
-  const counter = toDoList.length;
+  const { toDoList, setToDoList, filteredBy } = props;
 
-  const modifiedToDoList = toDoList.map((toDoItem) => ({
-    id: toDoItem.id,
-    insertedText: toDoItem.insertedText,
-    completed: false,
-  }));
+  const counter = toDoList.length;
 
   function removeItem(idToRemove) {
     const updatedList = toDoList.filter((item) => item.id !== idToRemove);
@@ -41,7 +36,7 @@ export default function TodoItemList(props) {
 
   return (
     <div className="frameList">
-      {modifiedToDoList.map((toDoItem) => {
+      {toDoList.map((toDoItem) => {
         return (
           <TodoItem
             key={toDoItem.id}
