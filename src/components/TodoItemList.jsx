@@ -38,10 +38,14 @@ export default function TodoItemList(props) {
     );
   };
 
+  const removeCompletedItems = () => {
+    const newList = toDoList.filter((item) => item.completed !== true);
+    setToDoList(newList);
+  };
+
   return (
     <div className="frameList">
       {modifiedToDoList.map((toDoItem) => {
-        // console.log(toDoItem.completed);
         return (
           <TodoItem
             key={toDoItem.id}
@@ -55,7 +59,7 @@ export default function TodoItemList(props) {
           />
         );
       })}
-      <Counter numberOfItems={counter} clearCompleted={clearCompleted} />
+      <Counter numberOfItems={counter} clearCompleted={removeCompletedItems} />
     </div>
   );
 }
