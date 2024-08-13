@@ -1,33 +1,30 @@
 import "../components/TodoItem.css";
 import iconCross from "../img/icon-cross.svg";
 import iconCheck from "../img/icon-check.svg";
-import { useState } from "react";
 
 export default function TodoItem(props) {
-  const { message, keyValue, toDoList, setToDoList } = props;
-  const [checkState, setCheckState] = useState(false);
+  const { message, keyValue, removeItem, markAsComplet, isCompleted, change } =
+    props;
 
   let divStyle = {
     textDecoration: "line-through",
     color: "hsl(233, 14%, 35%)",
   };
 
-  function removeItem(idToRemove) {
-    const updatedList = toDoList.filter((item) => item.id !== idToRemove);
-    setToDoList(updatedList);
-  }
-
   return (
     <div className="toDoItem">
       <div
-        className={` checkButton ${checkState ? "checkButtonBackground" : ""}`}
+        className={` checkButton ${
+          isCompleted(keyValue) ? "checkButtonBackground" : ""
+        }`}
         onClick={() => {
-          checkState ? setCheckState(false) : setCheckState(true);
+          change(keyValue);
+          markAsComplet(keyValue);
         }}
       >
-        {checkState && <img src={iconCheck} alt="check bullet" />}
+        {isCompleted(keyValue) && <img src={iconCheck} alt="check bullet" />}
       </div>
-      <p style={checkState ? divStyle : {}}>{message}</p>
+      <p style={isCompleted(keyValue) ? divStyle : {}}>{message}</p>
       <img
         className="deleteButton"
         src={iconCross}

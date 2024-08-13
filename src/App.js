@@ -8,17 +8,13 @@ import backgroundImgDeskLight from "./img/bg-desktop-light.jpg";
 import iconSun from "./img/icon-sun.svg";
 
 import { useEffect, useState } from "react";
-import TodoItemList from "./components/TodoItemList";
-import TodoItem from "./components/TodoItem";
-import InputComponent from "./components/InputComponent";
-import FiltersTodo from "./components/FiltersTodo";
+
+import ToDoListScreen from "./components/ToDoListScreen";
 
 function App() {
   const [backgroundImage, setBackgroundImage] = useState(
     backgroundImgMobileDark
   );
-
-  const [toDoList, setToDoList] = useState([]);
 
   return (
     <div className="App">
@@ -32,9 +28,7 @@ function App() {
           <h1>TODO</h1>
           <img src={iconSun} alt="light/dark mode button"></img>
         </header>
-        <InputComponent toDoList={toDoList} insertToDoItem={setToDoList} />
-        <TodoItemList toDoList={toDoList} setToDoList={setToDoList} />
-        <FiltersTodo />
+        <ToDoListScreen />
       </div>
     </div>
   );

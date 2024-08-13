@@ -1,11 +1,7 @@
 import "../components/Counter.css";
 
 export default function Counter(props) {
-  const { numberOfItems, setToDoList } = props;
-
-  function clearCompleted() {
-    setToDoList([]);
-  }
+  const { numberOfItems, clearCompleted } = props;
 
   return (
     <div className="counter">

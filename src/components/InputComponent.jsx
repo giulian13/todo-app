@@ -2,13 +2,13 @@ import { useState } from "react";
 import "./InputComponent.css";
 
 export default function InputComponent(props) {
-  const { toDoList, insertToDoItem } = props;
+  const { insertToDoItem } = props;
 
   const [inputText, setInputText] = useState("");
 
   function handleSubmit(event) {
     event.preventDefault();
-    insertToDoItem([...toDoList, { id: 0, insertedText: inputText }]);
+    insertToDoItem(inputText);
     setInputText("");
   }
 
@@ -26,7 +26,7 @@ export default function InputComponent(props) {
             setInputText(e.target.value);
           }}
           onSubmit={(e) => {
-            console.log(e.target.value);
+            // console.log(e.target.value);
           }}
           name="todo input"
         />
