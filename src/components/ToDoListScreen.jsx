@@ -17,7 +17,6 @@ export default function ToDoListScreen() {
       { id: itemNumber, insertedText: inputText, completed: false },
     ]);
     setItemNumber(itemNumber + 1);
-    // console.log(toDoList);
   };
 
   return (

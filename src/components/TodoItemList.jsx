@@ -17,10 +17,6 @@ export default function TodoItemList(props) {
     setToDoList(updatedList);
   }
 
-  function clearCompleted() {
-    setToDoList([]);
-  }
-
   function isCompleted(id) {
     const status = toDoList.find((item) => item.id === id);
     return status.completed;
