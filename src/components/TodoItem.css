@@ -1,4 +1,61 @@
-.toDoItem {
+/* Light theme CSS */
+.toDoItemLight {
+  font-size: 18px;
+  color: hsl(236, 9%, 61%);
+
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: row;
+  position: relative;
+
+  background-color: white;
+
+  padding: 10px 0;
+  border-bottom: solid 1px hsl(236, 33%, 92%)
+}
+
+
+
+.toDoItemLight p {
+  padding-right: 30px;
+}
+
+.toDoItemLight .checkButton {
+  margin: 0 15px;
+  padding: 10px;
+  border-radius: 50%;
+  border: solid 1px hsl(236, 33%, 92%);
+  overflow: hidden;
+
+  width: 22px;
+  height: 22px;
+  box-sizing: border-box;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.checkButtonBackground {
+  background-image: linear-gradient(to bottom right,
+      hsl(192, 100%, 67%),
+      hsl(280, 87%, 65%));
+}
+
+.deleteButton {
+  width: 12px;
+  height: 12px;
+
+  position: relative;
+  right: 20px;
+
+  padding: 10px;
+}
+
+/* Dark theme CSS */
+
+.toDoItemDark {
   font-size: 18px;
   color: hsl(234, 39%, 85%);
 
@@ -14,11 +71,13 @@
   border-bottom: solid 1px hsl(237, 14%, 26%);
 }
 
-.toDoItem p {
+
+
+.toDoItemDark p {
   padding-right: 30px;
 }
 
-.toDoItem .checkButton {
+.toDoItemDark .checkButton {
   margin: 0 15px;
   padding: 10px;
   border-radius: 50%;
@@ -32,22 +91,4 @@
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-.checkButtonBackground {
-  background-image: linear-gradient(
-    to bottom right,
-    hsl(192, 100%, 67%),
-    hsl(280, 87%, 65%)
-  );
-}
-
-.deleteButton {
-  width: 12px;
-  height: 12px;
-
-  position: relative;
-  right: 20px;
-
-  padding: 10px;
 }

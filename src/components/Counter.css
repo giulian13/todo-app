@@ -1,8 +1,9 @@
-.counter {
+/* Ligth theme CSS */
+.counterLight {
   font-size: 16px;
-  color: hsl(233, 14%, 35%);
+  color: hsl(233, 11%, 84%);
 
-  background-color: hsl(235, 24%, 19%);
+  background-color: white;
 
   padding: 10px 0;
 }
@@ -13,4 +14,15 @@
   flex-direction: row;
 
   margin: 5px 15px;
+}
+
+/* Dark theme CSS */
+
+.counterDark {
+  font-size: 16px;
+  color: hsl(233, 14%, 35%);
+
+  background-color: hsl(235, 24%, 19%);
+
+  padding: 10px 0;
 }

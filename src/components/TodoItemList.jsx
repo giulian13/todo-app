@@ -2,10 +2,8 @@ import "../components/TodoItemList.css";
 import TodoItem from "./TodoItem";
 import Counter from "./Counter";
 
-import { useEffect } from "react";
-
 export default function TodoItemList(props) {
-  const { toDoList, setToDoList, filteredBy } = props;
+  const { toDoList, setToDoList, filteredBy, isLightTheme } = props;
 
   const counter = toDoList.length;
 
@@ -47,7 +45,7 @@ export default function TodoItemList(props) {
   };
 
   return (
-    <div className="frameList">
+    <div className={isLightTheme ? "frameListLight" : "frameListDark"}>
       {howToFilter().map((toDoItem) => {
         return (
           <TodoItem
@@ -59,10 +57,15 @@ export default function TodoItemList(props) {
             removeItem={removeItem}
             markAsComplet={changeToDoItem}
             isCompleted={isCompleted}
+            isLightTheme={isLightTheme}
           />
         );
       })}
-      <Counter numberOfItems={counter} clearCompleted={removeCompletedItems} />
+      <Counter
+        numberOfItems={counter}
+        clearCompleted={removeCompletedItems}
+        isLightTheme={isLightTheme}
+      />
     </div>
   );
 }

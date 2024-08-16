@@ -1,4 +1,38 @@
-.filtersFrame {
+/* Light theme CSS */
+
+.filtersFrameLight {
+  font-size: 18px;
+  color: hsl(236, 9%, 61%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: white;
+
+  width: 90%;
+
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-radius: 5px;
+
+  margin-top: 20px;
+
+  box-shadow: 1px 15px 60px hsl(233, 11%, 84%);
+}
+
+.filtersFrameLight p {
+  padding: 5px 10px;
+}
+
+.filtersFrameLight p:focus,
+p:active {
+  color: hsl(220, 98%, 61%);
+}
+
+/* Dark theme CSS */
+
+.filtersFrameDark {
   font-size: 18px;
   color: hsl(233, 14%, 35%);
 
@@ -17,11 +51,11 @@
   margin-top: 20px;
 }
 
-.filtersFrame p {
+.filtersFrameDark p {
   padding: 5px 10px;
 }
 
-.filtersFrame p:focus,
+.filtersFrameDark p:focus,
 p:active {
   color: hsl(220, 98%, 61%);
 }

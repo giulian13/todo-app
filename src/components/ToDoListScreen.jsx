@@ -32,8 +32,9 @@ export default function ToDoListScreen(props) {
         toDoList={toDoList}
         setToDoList={setToDoList}
         filteredBy={filteredBy}
+        isLightTheme={isLightTheme}
       />
-      <FiltersTodo setFilteredBy={setFilteredBy} />
+      <FiltersTodo setFilteredBy={setFilteredBy} isLightTheme={isLightTheme} />
     </div>
   );
 }

@@ -1,10 +1,10 @@
 import "./FiltersTodo.css";
 
 export default function FiltersTodo(props) {
-  const { setFilteredBy } = props;
+  const { setFilteredBy, isLightTheme } = props;
 
   return (
-    <div className="filtersFrame">
+    <div className={isLightTheme ? "filtersFrameLight" : "filtersFrameDark"}>
       <p
         onClick={() => {
           setFilteredBy("all");

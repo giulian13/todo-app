@@ -1,8 +1,26 @@
-.frameList {
+/* Light theme CSS */
+
+.frameListLight {
   width: 90%;
   height: auto;
   overflow: hidden;
 
   border-radius: 5px;
   margin-bottom: 10px;
+
+  box-shadow: 1px 15px 60px hsl(233, 11%, 84%);
+
+}
+
+/* Dark theme CSS */
+
+.frameListDark {
+  width: 90%;
+  height: auto;
+  overflow: hidden;
+
+  border-radius: 5px;
+  margin-bottom: 10px;
+
+
 }

@@ -3,16 +3,23 @@ import iconCross from "../img/icon-cross.svg";
 import iconCheck from "../img/icon-check.svg";
 
 export default function TodoItem(props) {
-  const { message, keyValue, removeItem, markAsComplet, isCompleted, change } =
-    props;
+  const {
+    message,
+    keyValue,
+    removeItem,
+    markAsComplet,
+    isCompleted,
+    change,
+    isLightTheme,
+  } = props;
 
   let divStyle = {
     textDecoration: "line-through",
-    color: "hsl(233, 14%, 35%)",
+    color: "hsl(236, 33%, 92%)",
   };
 
   return (
-    <div className="toDoItem">
+    <div className={isLightTheme ? "toDoItemLight" : "toDoItemDark"}>
       <div
         className={` checkButton ${
           isCompleted(keyValue) ? "checkButtonBackground" : ""
@@ -25,6 +32,7 @@ export default function TodoItem(props) {
         {isCompleted(keyValue) && <img src={iconCheck} alt="check bullet" />}
       </div>
       <p style={isCompleted(keyValue) ? divStyle : {}}>{message}</p>
+
       <img
         className="deleteButton"
         src={iconCross}

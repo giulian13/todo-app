@@ -2,7 +2,7 @@ import { useState } from "react";
 import "./InputComponent.css";
 
 export default function InputComponent(props) {
-  const { insertToDoItem } = props;
+  const { insertToDoItem, isLightTheme } = props;
 
   const [inputText, setInputText] = useState("");
 
@@ -13,7 +13,7 @@ export default function InputComponent(props) {
   }
 
   return (
-    <div className="inputFrameLight">
+    <div className={isLightTheme ? "inputFrameLight" : "inputFrameDark"}>
       <form onSubmit={handleSubmit}>
         <div className="checkButton"></div>
         <input

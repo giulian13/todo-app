@@ -28,7 +28,10 @@ function App() {
           <h1>TODO</h1>
           <LightMode setLightTheme={setLightTheme} />
         </header>
-        <ToDoListScreen isLghtTheme={isLightTheme} />
+        <ToDoListScreen
+          isLghtTheme={isLightTheme}
+          isLightTheme={isLightTheme}
+        />
       </div>
     </div>
   );
