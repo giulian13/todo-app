@@ -5,9 +5,27 @@ export default function FiltersTodo(props) {
 
   return (
     <div className="filtersFrame">
-      <p>All</p>
-      <p>Active</p>
-      <p>Completed</p>
+      <p
+        onClick={() => {
+          setFilteredBy("all");
+        }}
+      >
+        All
+      </p>
+      <p
+        onClick={() => {
+          setFilteredBy("active");
+        }}
+      >
+        Active
+      </p>
+      <p
+        onClick={() => {
+          setFilteredBy("completed");
+        }}
+      >
+        Completed
+      </p>
     </div>
   );
 }

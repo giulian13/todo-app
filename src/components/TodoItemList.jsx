@@ -2,6 +2,8 @@ import "../components/TodoItemList.css";
 import TodoItem from "./TodoItem";
 import Counter from "./Counter";
 
+import { useEffect } from "react";
+
 export default function TodoItemList(props) {
   const { toDoList, setToDoList, filteredBy } = props;
 
@@ -34,9 +36,19 @@ export default function TodoItemList(props) {
     setToDoList(newList);
   };
 
+  const howToFilter = () => {
+    if (filteredBy === "active") {
+      return toDoList.filter((item) => item.completed === false);
+    } else if (filteredBy === "completed") {
+      return toDoList.filter((item) => item.completed === true);
+    } else {
+      return toDoList;
+    }
+  };
+
   return (
     <div className="frameList">
-      {toDoList.map((toDoItem) => {
+      {howToFilter().map((toDoItem) => {
         return (
           <TodoItem
             key={toDoItem.id}

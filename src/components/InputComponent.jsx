@@ -13,7 +13,7 @@ export default function InputComponent(props) {
   }
 
   return (
-    <div className="inputFrame">
+    <div className="inputFrameLight">
       <form onSubmit={handleSubmit}>
         <div className="checkButton"></div>
         <input
@@ -24,9 +24,6 @@ export default function InputComponent(props) {
           onChange={(e) => {
             e.preventDefault();
             setInputText(e.target.value);
-          }}
-          onSubmit={(e) => {
-            // console.log(e.target.value);
           }}
           name="todo input"
         />

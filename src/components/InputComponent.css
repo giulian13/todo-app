@@ -1,4 +1,52 @@
-.inputFrame {
+/* Light theme CSS */
+
+.inputFrameLight {
+  font-size: 18px;
+  color: hsl(236, 9%, 61%);
+
+  background-color: white;
+
+  width: 90%;
+
+  padding: 10px 0;
+  margin-bottom: 20px;
+  border-radius: 5px;
+}
+
+
+.inputFrameLight p {
+  padding-right: 30px;
+
+}
+
+.inputFrameLight .checkButton {
+  margin: 0 15px;
+  padding: 10px;
+  border-radius: 50%;
+  border: solid 1px hsl(236, 33%, 92%);
+}
+
+.inputFrameLight form {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+}
+
+.inputFrameLight input {
+  all: unset;
+  background-color: white;
+
+}
+
+.inputFrameLight ::placeholder {
+  color: hsl(236, 9%, 61%);
+}
+
+/* Dark theme CSS */
+
+
+.inputFrameDark {
   font-size: 18px;
   color: hsl(233, 14%, 35%);
 
@@ -11,23 +59,24 @@
   border-radius: 5px;
 }
 
-.inputFrame p {
+.inputFrameDark p {
   padding-right: 30px;
 }
 
-.inputFrame .checkButton {
+.inputFrameDark .checkButton {
   margin: 0 15px;
   padding: 10px;
   border-radius: 50%;
   border: solid 1px hsl(237, 14%, 26%);
 }
-.inputFrame form {
+
+.inputFrameDark form {
   display: flex;
   align-items: center;
   justify-content: flex-start;
 }
 
-.inputFrame input {
+.inputFrameDark input {
   all: unset;
   background-color: hsl(235, 24%, 19%);
 }

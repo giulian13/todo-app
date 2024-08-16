@@ -7,12 +7,26 @@ p {
   padding: 0;
 }
 
-.App {
+.AppDark {
   font-family: "Josefin Sans", sans-serif;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
   background-color: hsl(235, 21%, 11%);
+
+  position: relative;
+
+  min-height: 100vh;
+
+  z-index: 0;
+}
+
+.AppLight {
+  font-family: "Josefin Sans", sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  background-color: whitehsl(0, 0%, 98%);
 
   position: relative;
 

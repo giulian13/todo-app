@@ -5,30 +5,30 @@ import backgroundImgMobileDark from "./img/bg-mobile-dark.jpg";
 import backgroundImgMobileLight from "./img/bg-mobile-light.jpg";
 import backgroundImgDeskDark from "./img/bg-desktop-dark.jpg";
 import backgroundImgDeskLight from "./img/bg-desktop-light.jpg";
-import iconSun from "./img/icon-sun.svg";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 import ToDoListScreen from "./components/ToDoListScreen";
+import LightMode from "./components/LightMode";
 
 function App() {
-  const [backgroundImage, setBackgroundImage] = useState(
-    backgroundImgMobileDark
-  );
+  const [isLightTheme, setLightTheme] = useState(true);
 
   return (
-    <div className="App">
+    <div className={isLightTheme ? "AppLight" : "AppDark"}>
       <div className="mainFrame">
         <img
           className="backgroundImg"
-          src={backgroundImage}
+          src={
+            isLightTheme ? backgroundImgMobileLight : backgroundImgMobileDark
+          }
           alt="mobile background"
         ></img>
         <header>
           <h1>TODO</h1>
-          <img src={iconSun} alt="light/dark mode button"></img>
+          <LightMode setLightTheme={setLightTheme} />
         </header>
-        <ToDoListScreen />
+        <ToDoListScreen isLghtTheme={isLightTheme} />
       </div>
     </div>
   );

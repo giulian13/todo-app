@@ -6,11 +6,13 @@ import FiltersTodo from "./FiltersTodo";
 
 import { useState } from "react";
 
-export default function ToDoListScreen() {
+export default function ToDoListScreen(props) {
+  const { isLightTheme } = props;
+
   const [toDoList, setToDoList] = useState([]);
 
   const [itemNumber, setItemNumber] = useState(0);
-  const [filteredBy, setFilteredBy] = useState("Completed");
+  const [filteredBy, setFilteredBy] = useState("all");
 
   const pushNewItem = (inputText) => {
     setToDoList([
@@ -22,7 +24,10 @@ export default function ToDoListScreen() {
 
   return (
     <div className="listFrame">
-      <InputComponent insertToDoItem={pushNewItem} />
+      <InputComponent
+        insertToDoItem={pushNewItem}
+        isLightTheme={isLightTheme}
+      />
       <TodoItemList
         toDoList={toDoList}
         setToDoList={setToDoList}
