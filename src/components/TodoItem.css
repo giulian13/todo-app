@@ -9,6 +9,8 @@
   flex-direction: row;
   position: relative;
 
+
+
   background-color: white;
 
   padding: 10px 0;
@@ -19,6 +21,9 @@
 
 .toDoItemLight p {
   padding-right: 30px;
+
+  overflow: auto;
+
 }
 
 .toDoItemLight .checkButton {
@@ -75,6 +80,7 @@
 
 .toDoItemDark p {
   padding-right: 30px;
+  overflow: auto;
 }
 
 .toDoItemDark .checkButton {
