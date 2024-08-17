@@ -6,22 +6,41 @@ import backgroundImgMobileLight from "./img/bg-mobile-light.jpg";
 import backgroundImgDeskDark from "./img/bg-desktop-dark.jpg";
 import backgroundImgDeskLight from "./img/bg-desktop-light.jpg";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 import ToDoListScreen from "./components/ToDoListScreen";
 import LightMode from "./components/LightMode";
 
 function App() {
   const [isLightTheme, setLightTheme] = useState(true);
+  const [displayBackgroundImg, setDisplayBackgroundImg] = useState();
+
+  useEffect(() => {
+    const updateBackground = () => {
+      if ((window.innerWidth < 700) & isLightTheme) {
+        setDisplayBackgroundImg(backgroundImgMobileLight);
+      } else if ((window.innerWidth < 700) & (isLightTheme === false)) {
+        setDisplayBackgroundImg(backgroundImgMobileDark);
+      } else if ((window.innerWidth > 700) & isLightTheme) {
+        setDisplayBackgroundImg(backgroundImgDeskLight);
+      } else if ((window.innerWidth > 700) & (isLightTheme === false)) {
+        setDisplayBackgroundImg(backgroundImgDeskDark);
+      }
+    };
+
+    updateBackground();
+    window.addEventListener("resize", updateBackground);
+    return () => {
+      window.removeEventListener("resize", updateBackground);
+    };
+  }, [isLightTheme]);
 
   return (
     <div className={isLightTheme ? "AppLight" : "AppDark"}>
       <div className="mainFrame">
         <img
           className="backgroundImg"
-          src={
-            isLightTheme ? backgroundImgMobileLight : backgroundImgMobileDark
-          }
+          src={displayBackgroundImg}
           alt="mobile background"
         ></img>
         <header>

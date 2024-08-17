@@ -41,6 +41,13 @@
 
 .inputFrameLight ::placeholder {
   color: hsl(236, 9%, 61%);
+
+
+}
+
+.inputFrameLight input {
+
+  width: 85%;
 }
 
 /* Dark theme CSS */
@@ -79,4 +86,9 @@
 .inputFrameDark input {
   all: unset;
   background-color: hsl(235, 24%, 19%);
+}
+
+.inputFrameDark input {
+
+  width: 85%;
 }

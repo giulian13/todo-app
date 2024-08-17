@@ -6,6 +6,9 @@
   background-color: white;
 
   padding: 10px 0;
+
+  width: 100%;
+
 }
 
 .counterContainer {
@@ -14,6 +17,7 @@
   flex-direction: row;
 
   margin: 5px 15px;
+
 }
 
 /* Dark theme CSS */
@@ -25,4 +29,21 @@
   background-color: hsl(235, 24%, 19%);
 
   padding: 10px 0;
+
+
+}
+
+
+
+@media (min-width: 700px) {
+
+  .counterContainer {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+
+    margin: 5px 15px;
+
+  }
+
 }
