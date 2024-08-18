@@ -9,11 +9,11 @@ export default function LightMode(props) {
 
   function changeLightMode() {
     if (iconButtonImg === iconSun) {
-      setIconButtonImg(iconSun);
-      setLightTheme(false);
-    } else {
       setIconButtonImg(iconMoon);
       setLightTheme(true);
+    } else {
+      setIconButtonImg(iconSun);
+      setLightTheme(false);
     }
   }
 
