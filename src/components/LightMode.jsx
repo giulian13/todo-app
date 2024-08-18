@@ -5,14 +5,14 @@ import iconMoon from "../img/icon-moon.svg";
 
 export default function LightMode(props) {
   const { setLightTheme } = props;
-  const [iconButtonImg, setIconButtonImg] = useState(iconSun);
+  const [iconButtonImg, setIconButtonImg] = useState(iconMoon);
 
   function changeLightMode() {
     if (iconButtonImg === iconSun) {
-      setIconButtonImg(iconMoon);
+      setIconButtonImg(iconSun);
       setLightTheme(false);
     } else {
-      setIconButtonImg(iconSun);
+      setIconButtonImg(iconMoon);
       setLightTheme(true);
     }
   }
